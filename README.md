@@ -101,3 +101,5 @@ JSON-файлах, управление идёт через команды, по
     database
 
 ## Демонстрация
+
+[![asciicast](https://asciinema.org/a/J0HTh8wwnJg60tiV.svg)](https://asciinema.org/a/J0HTh8wwnJg60tiV)
