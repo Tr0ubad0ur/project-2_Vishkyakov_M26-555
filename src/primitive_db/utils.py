@@ -1,6 +1,6 @@
 import json
 
-from primitive_db.constants import FILE_ENCODING, JSON_INDENT
+from primitive_db.const import FILE_ENCODING, JSON_INDENT
 
 
 def load_json(filepath, default):

@@ -1,4 +1,4 @@
-from primitive_db.constants import (
+from primitive_db.const import (
     COLUMN_SEPARATOR,
     ERR_TABLE_EXISTS,
     ERR_TABLE_MISSING,
