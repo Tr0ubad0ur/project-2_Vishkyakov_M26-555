@@ -75,3 +75,29 @@ JSON-файлах, управление идёт через команды, по
     >>>Введите команду: delete from users where ID = 1
     Вы уверены, что хотите выполнить "удаление записи"? [y/n]: y
     Запись с ID=1 успешно удалена из таблицы "users".
+
+
+## Структура проекта
+
+    src/primitive_db/
+    ├── main.py        # точка входа
+    ├── engine.py      # главный цикл и обработка команд
+    ├── core.py        # логика таблиц и CRUD
+    ├── parser.py      # разбор values / set / where
+    ├── utils.py       # работа с JSON-файлами
+    ├── decorators.py  # декораторы и кэш-замыкание
+    └── const.py       # константы и тексты сообщений
+
+Данные хранятся в `db_meta.json` (схемы таблиц) и `data/<таблица>.json`.
+
+## Проверка кода
+
+    make lint           # ruff check .
+
+## Установка как консольной команды
+
+    make build
+    make package-install   # uv tool install dist/*.whl
+    database
+
+## Демонстрация
