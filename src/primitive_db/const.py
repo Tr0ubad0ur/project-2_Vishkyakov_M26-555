@@ -23,12 +23,19 @@ SINGLE_TABLE_ARGS = 2
 PROMPT_TEXT = ">>>Введите команду: "
 
 HELP_TEXT = """
-***Процесс работы с таблицей***
+***Операции с таблицами и данными***
 
 Функции:
 <command> create_table <имя_таблицы> <столбец1:тип> .. - создать таблицу
 <command> list_tables - показать список всех таблиц
 <command> drop_table <имя_таблицы> - удалить таблицу
+<command> info <имя_таблицы> - информация о таблице
+<command> insert into <имя_таблицы> values (<значение1>, ...) - создать запись
+<command> select from <имя_таблицы> - прочитать все записи
+<command> select from <имя_таблицы> where <столбец> = <значение> - по условию
+<command> update <имя_таблицы> set <столбец> = <значение> where <столбец> = <значение>
+    - обновить запись
+<command> delete from <имя_таблицы> where <столбец> = <значение> - удалить запись
 
 Общие команды:
 <command> exit - выход из программы
@@ -44,3 +51,36 @@ ERR_TABLE_MISSING = 'Ошибка: Таблица "{name}" не существу
 
 MSG_TABLE_CREATED = 'Таблица "{name}" успешно создана со столбцами: {columns}'
 MSG_TABLE_DROPPED = 'Таблица "{name}" успешно удалена.'
+
+
+DATA_DIR = "data"
+
+QUOTES = ('"', "'")
+BOOL_LITERALS = {"true": True, "false": False}
+KEYWORD_SET = " set "
+KEYWORD_WHERE = " where "
+KEYWORD_VALUES = "values"
+KEYWORD_INTO = "into"
+KEYWORD_FROM = "from"
+EQUALS_SIGN = "="
+COMMA = ","
+
+CMD_INFO = "info"
+CMD_INSERT = "insert"
+CMD_SELECT = "select"
+CMD_UPDATE = "update"
+CMD_DELETE = "delete"
+
+TYPE_CLASSES = {TYPE_INT: int, TYPE_STR: str, TYPE_BOOL: bool}
+
+MSG_NO_RECORDS = "Записи по заданному условию не найдены."
+ERR_COLUMN_MISSING = 'Ошибка: Столбец "{column}" не найден в таблице "{name}".'
+ERR_VALUES_COUNT = "Ошибка: Ожидалось значений: {expected}, получено: {actual}."
+ERR_ID_IMMUTABLE = "Ошибка: Столбец ID изменять нельзя."
+
+MSG_RECORD_ADDED = 'Запись с ID={ids} успешно добавлена в таблицу "{name}".'
+MSG_RECORD_UPDATED = 'Запись с ID={ids} в таблице "{name}" успешно обновлена.'
+MSG_RECORD_DELETED = 'Запись с ID={ids} успешно удалена из таблицы "{name}".'
+MSG_TABLE_INFO = (
+    "Таблица: {name}\nСтолбцы: {columns}\nКоличество записей: {count}"
+)
