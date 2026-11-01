@@ -84,3 +84,16 @@ MSG_RECORD_DELETED = 'Запись с ID={ids} успешно удалена и�
 MSG_TABLE_INFO = (
     "Таблица: {name}\nСтолбцы: {columns}\nКоличество записей: {count}"
 )
+
+
+CONFIRM_YES = "y"
+ACTION_DROP_TABLE = "удаление таблицы"
+ACTION_DELETE_RECORD = "удаление записи"
+CONFIRM_PROMPT = 'Вы уверены, что хотите выполнить "{action}"? [y/n]: '
+LOG_TIME_TEMPLATE = "Функция {name} выполнилась за {seconds:.3f} секунд."
+
+MSG_CANCELLED = "Операция отменена."
+MSG_FILE_NOT_FOUND = (
+    "Ошибка: Файл данных не найден. Возможно, база данных не инициализирована."
+)
+MSG_UNEXPECTED = "Произошла непредвиденная ошибка: {error}"
